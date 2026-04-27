@@ -8,3 +8,10 @@ include:
     artifact-name: firmware-left-clique
   - board: adv360_right
     artifact-name: firmware-right
+  - board: adv360_left
+    cmake-args: -DCONFIG_BT_BAS=y
+    artifact-name: firmware-left-battery
+  - board: adv360_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_BT_BAS=y
+    artifact-name: firmware-left-clique-battery
