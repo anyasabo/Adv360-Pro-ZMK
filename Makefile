@@ -50,11 +50,11 @@ clean: clean_firmware clean_image
 lint-dts:
 	npx dts-linter --format --diagnostics \
 		--file config/adv360.keymap --file config/macros.dtsi \
-		--file config/boards/arm/adv360/*.dts \
-		--file config/boards/arm/adv360/*.dtsi
+		--file boards/arm/adv360/*.dts \
+		--file boards/arm/adv360/*.dtsi
 
 fmt-dts:
 	npx dts-linter --formatFixAll \
 		--file config/adv360.keymap --file config/macros.dtsi \
-		--file config/boards/arm/adv360/*.dts \
-		--file config/boards/arm/adv360/*.dtsi
+		--file boards/arm/adv360/*.dts \
+		--file boards/arm/adv360/*.dtsi
