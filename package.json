@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "devDependencies": {
+    "dts-linter": "^0.4"
+  }
+}
