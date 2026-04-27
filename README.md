@@ -19,7 +19,10 @@ Certain ZMK features (e.g. combos) require knowing the exact key positions in th
 ### Build firmware
 
 1. Push a commit to trigger the build.
-2. Download the artifact.
+2. Open the run on the Actions tab and download the `firmware` archive. It contains:
+   - `adv360_left.uf2` — left half, stock build
+   - `adv360_left_with_studio.uf2` — left half with [ZMK Studio](https://zmk.dev/docs/features/studio) enabled (formerly "clique")
+   - `adv360_right.uf2` — right half (identical for both variants)
 
 ## Building the Firmware in a local container
 
