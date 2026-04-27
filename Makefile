@@ -9,7 +9,7 @@ SELINUX1 := :z
 SELINUX2 := ,z
 endif
 
-.PHONY: all left clean_firmware clean_image clean
+.PHONY: all left clean_firmware clean_image clean lint-dts fmt-dts
 
 all:
 	$(shell bin/get_version_local.sh clique >> /dev/null)
@@ -42,3 +42,15 @@ clean_image:
 	$(DOCKER) image rm zmk docker.io/zmkfirmware/zmk-build-arm:stable
 
 clean: clean_firmware clean_image
+
+lint-dts:
+	npx dts-linter --format --diagnostics \
+		--file config/adv360.keymap --file config/macros.dtsi \
+		--file config/boards/arm/adv360/*.dts \
+		--file config/boards/arm/adv360/*.dtsi
+
+fmt-dts:
+	npx dts-linter --formatFixAll \
+		--file config/adv360.keymap --file config/macros.dtsi \
+		--file config/boards/arm/adv360/*.dts \
+		--file config/boards/arm/adv360/*.dtsi
