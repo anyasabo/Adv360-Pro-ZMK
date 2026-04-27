@@ -1,0 +1,10 @@
+---
+include:
+  - board: adv360_left
+    artifact-name: adv360_left
+  - board: adv360_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: adv360_left_with_studio
+  - board: adv360_right
+    artifact-name: adv360_right
