@@ -63,6 +63,11 @@ sudo apt-get install docker make
 1. Execute `make` to build firmware for both halves or `make left` to only build firmware for the left hand side.
 2. Check the `firmware` directory for the latest firmware build. The first part of the filename is the timestamp when the firmware was built.
 
+> **Note:** Direct `west build` without the Makefile is not supported.
+> The build scripts generate `config/version.dtsi` with version
+> metadata before compiling; building without them will fail on an
+> undefined `macro_ver` reference.
+
 ### Cleanup
 
 The built docker container and compiled firmware files can be deleted with `make clean`. This might be necessary if you updated your fork from V2.0 to V3.0 and are encountering build failures.
